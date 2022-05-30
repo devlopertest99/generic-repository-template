@@ -21,7 +21,7 @@ namespace Repository.Interfaces
         /// <param name="allowNoTracking">Returns a query where the change tracker will not track any of the entities that are returned.
         /// <br>If set to true, all modified changes of the entity will not be detected by the change tracker.</br></param>
         /// <returns>An entity result from <typeparamref name="TEntity"/> after the process.</returns>
-        Task<RepositoryResult<TEntity>> Count(Expression<Func<TEntity, bool>> filter = null, bool allowNoTracking = false);
+        Task<RepositoryResult<TEntity>> Count(Expression<Func<TEntity, bool>>? filter = null, bool allowNoTracking = false);
 
         /// <summary>
         /// Create a new data for <typeparamref name="TEntity"/> into the database.
@@ -35,7 +35,7 @@ namespace Repository.Interfaces
         /// </summary>
         /// <param name="filter">A list of fields you want to filter from the <typeparamref name="TEntity"/>.</param>
         /// <returns>A single object from the <typeparamref name="TEntity"/> list.</returns>
-        Task<RepositoryResult<TEntity>> Find(Expression<Func<TEntity, bool>> filter = null);
+        Task<RepositoryResult<TEntity>> Find(Expression<Func<TEntity, bool>>? filter = null);
 
         /// <summary>
         /// Get the list of <typeparamref name="TEntity"/> from the database.
@@ -48,9 +48,9 @@ namespace Repository.Interfaces
         /// <param name="page">A number you want to start to look in a paginated list.</param>
         /// <param name="pageSize">Total size per page you want to display.</param>
         /// <returns>An entity result from <typeparamref name="TEntity"/> after the process.</returns>
-        Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>> filter = null,
-                                        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-                                        Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> includeRelatedEntity = null,
+        Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>>? filter = null,
+                                        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+                                        Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? includeRelatedEntity = null,
                                         bool allowNoTracking = false, int? page = null, int? pageSize = null);
         /// <summary>
         /// Get the list of <typeparamref name="TEntity"/> from the database.
@@ -62,8 +62,8 @@ namespace Repository.Interfaces
         /// <param name="page">A number you want to start to look in a paginated list.</param>
         /// <param name="pageSize">Total size per page you want to display.</param>
         /// <returns>An entity result from <typeparamref name="TEntity"/> after the process.</returns>
-        Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>> filter = null,
-                                       Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+        Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>>? filter = null,
+                                       Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
                                        bool allowNoTracking = false, int? page = null, int? pageSize = null);
         /// <summary>
         /// Get the list of <typeparamref name="TEntity"/> from the database.
@@ -74,7 +74,7 @@ namespace Repository.Interfaces
         /// <param name="page">A number you want to start to look in a paginated list.</param>
         /// <param name="pageSize">Total size per page you want to display.</param>
         /// <returns>An entity result from <typeparamref name="TEntity"/> after the process.</returns>
-        Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>> filter = null,
+        Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>>? filter = null,
                                        bool allowNoTracking = false, int? page = null, int? pageSize = null);
         /// <summary>
         /// Get the list of <typeparamref name="TEntity"/> from the database.

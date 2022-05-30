@@ -21,7 +21,7 @@ namespace Repository.Model
             _dbSet = _dbContext.Set<TEntity>();
         }
 
-        public async Task<RepositoryResult<TEntity>> Count(Expression<Func<TEntity, bool>> filter = null, bool allowNoTracking = false)
+        public async Task<RepositoryResult<TEntity>> Count(Expression<Func<TEntity, bool>>? filter = null, bool allowNoTracking = false)
         {
             RepositoryResult<TEntity> result;
 
@@ -68,7 +68,7 @@ namespace Repository.Model
             return result;
         }
 
-        public async Task<RepositoryResult<TEntity>> Find(Expression<Func<TEntity, bool>> filter = null)
+        public async Task<RepositoryResult<TEntity>> Find(Expression<Func<TEntity, bool>>? filter = null)
         {
             RepositoryResult<TEntity> result;
 
@@ -94,9 +94,9 @@ namespace Repository.Model
             return result;
         }
 
-        public async Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-            Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> includeRelatedEntity = null,
+        public async Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>>? filter = null,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+            Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? includeRelatedEntity = null,
             bool allowNoTracking = false, int? page = null, int? pageSize = null)
         {
             RepositoryResult<TEntity> result;
@@ -135,8 +135,8 @@ namespace Repository.Model
             return result;
         }
 
-        public async Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+        public async Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>>? filter = null,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
             bool allowNoTracking = false, int? page = null, int? pageSize = null)
         {
             RepositoryResult<TEntity> result;
@@ -172,7 +172,7 @@ namespace Repository.Model
             return result;
         }
 
-        public async Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>> filter = null,
+        public async Task<RepositoryResult<TEntity>> List(Expression<Func<TEntity, bool>>? filter = null,
             bool allowNoTracking = false, int? page = null, int? pageSize = null)
         {
             RepositoryResult<TEntity> result;
